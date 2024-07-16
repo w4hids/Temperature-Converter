@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Temperature Converter</title>
+
+<style>
+		.section{
+			position: relative;
+			width: 100%;
+			height: 200px;
+			display: flex;
+			align-item: center;
+			justify-content: center;
+			overflow: hidden;
+			color: silver;
+		}
+			.section h1{
+			text-align: center;
+			font-size: 5rem;
+			font-family: cookie;
+			padding: 20px;
+			margin: 15px;
+			z-index: 1;
+			opacity: 0.3;
+		}
+		.vedio-container{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+		}
+		.color-overlay{
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: lightblue;
+			width: 100%;
+			height: 100vh;
+			opacity: 0.3;
+		}
+		label{
+			font-family:cookie;
+			font-size: 20px;
+			color: black;
+		}
+		input{
+			padding: 20px 10px;
+			margin: 5px;
+			font-size: 20px;
+			font-weight: bold;
+			width: 200px;
+			text-align: center;
+			font-family:cookie;
+		}
+		p{
+			padding: 20px 10px;
+			font-size: 25px;
+			font-weight: bold;
+			text-align: center;
+			font-family:cookie;
+			color: black;
+		}
+	  
+
+		    </style>
+</head>
+<link rel="icon" href="D:\wahid html\project\logoimageforproject.jpg" type="image/icon type">
+<body style="background-image:url('https://tinyurl.com/4fb9p3xa')">
+<body>
+ <div class="top-left"></div>
+<div class="section">
+<h1>░▒▓█ T̳̿͟͞e̳̿͟͞m̳̿͟͞p̳̿͟͞e̳̿͟͞r̳̿͟͞a̳̿͟͞t̳̿͟͞u̳̿͟͞r̳̿͟͞e̳̿͟͞ ̳̿͟͞C̳̿͟͞o̳̿͟͞n̳̿͟͞v̳̿͟͞e̳̿͟͞r̳̿͟͞t̳̿͟͞e̳̿͟͞r̳̿͟͞ █▓▒░</h1>
+<div class="vedio-container">
+<div class="color-overlay"></div>
+<video autoplay loop muted>
+<source src="D:\wahid html\project\Galaxy - 535.mp4">
+</video>
+</div>
+</div>
+<p>Enter a value in the Fahrenheit field to convert the value to Celsius and Kelvin</p>
+<p>
+<label>Fahrenheit:</label>
+<input id="Fahrenheit" type="number" placeholder="Enter value here" oninput="tempConverter(Fahrenheit.value)" onchange="tempConverter(Celcius.value)">
+</p>
+<p>Celcius: <span id="Celcius"></span></p>
+<p>Kelvin: <span id="Kelvin"></span></p>
+<script>
+// Get the current count from localStorage
+let count = localStorage.getItem('visitorCount');
+
+// If no count is found, initialize it to zero
+if (count === null) {
+  count = 0;
+}
+
+// Increment the count
+count++;
+
+// Update the count in localStorage
+localStorage.setItem('visitorCount', count);
+
+// Display the count on the webpage
+document.write(`<h2>𝐘𝐨𝐮 𝐚𝐫𝐞 𝐯𝐢𝐬𝐢𝐭𝐨𝐫 𝐧𝐮𝐦𝐛𝐞𝐫:${count}</h2>`);
+function tempConverter(val) {
+  val = parseFloat(val);
+  document.getElementById("Kelvin").innerHTML=(val-32)* 5/9 + 273.15;
+  document.getElementById("Celcius").innerHTML=(val-32)/1.8;
+}
+</script>
+</body>
+</html>
